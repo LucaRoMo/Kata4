@@ -1,19 +1,19 @@
 package kata4.model;
 
 public class Mail {
-    private String domain;
+    private String mail;
     
     public Mail(String mail){
         if(mail.contains("@")){
             String[] aux = new String[2]; 
             aux = mail.split("@");
-            domain = aux[1];
+            this.mail = aux[1];
         }else{
-            domain = null;
+            this.mail = null;
         }
     }
     
     public String getDomain(){
-        return domain;
+        return mail;
     }
 }

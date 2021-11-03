@@ -10,9 +10,9 @@ import kata4.model.Mail;
 
 public class MailListReader {
     
-    public static List<Mail> read(String filename) throws FileNotFoundException{
+    public static List<Mail> read(String fileName) throws FileNotFoundException{
         List<Mail> res = new LinkedList<>();
-        Scanner sc = new Scanner(new File(filename));
+        Scanner sc = new Scanner(new File(fileName));
         while(sc.hasNextLine()){
             String aux = sc.next();
             if(aux.contains("@")){

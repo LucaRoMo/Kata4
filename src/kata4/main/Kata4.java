@@ -11,15 +11,34 @@ import kata4.view.HistogramDisplay;
 import kata4.view.MailHistogramBuilder;
 
 public class Kata4 {
-
-    public static void main(String[] args) throws FileNotFoundException {
-        Histogram<String> histogram = new Histogram();
-        List<Mail> lista = new LinkedList<>();
+    public List<Mail> mailList = new LinkedList<>();
+    public Histogram<String> histogram = new Histogram();
+    public HistogramDisplay histoDisplay;
+    public String fileName = "email.txt";
         
-        lista = MailListReader.read("email.txt");
-        histogram = MailHistogramBuilder.build(lista);
-        HistogramDisplay histo = new HistogramDisplay(histogram);
-        histo.execute();
+    public static void main(String[] args) throws FileNotFoundException{
+        Kata4 main = new Kata4();
+        main.execute();
+    }
+    
+    public void execute() throws FileNotFoundException{
+        input();
+        process();
+        output();
+    }
+    
+    public void input() throws FileNotFoundException{
+        
+        mailList = MailListReader.read(fileName);
+    }
+    public void process(){
+        
+        histogram = MailHistogramBuilder.build(mailList);
+    }
+    
+    public void output(){
+        histoDisplay = new HistogramDisplay(histogram);
+        histoDisplay.execute();
     }
     
 }
