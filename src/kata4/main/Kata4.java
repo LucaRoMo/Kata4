@@ -10,6 +10,7 @@ import kata4.model.Histogram;
 import kata4.view.HistogramDisplay;
 import kata4.view.MailHistogramBuilder;
 
+
 public class Kata4 {
     public List<Mail> mailList = new LinkedList<>();
     public Histogram<String> histogram = new Histogram();
